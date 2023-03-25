@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@font-face {
+  font-family: "Effra";
+  src: url("./assets/fonts/effra-Font/Effra_Std_Bd.ttf") format("truetype"), url("./assets/fonts/effra-Font/Effra_Std_Bd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("./assets/fonts/effra-Font/Effra_Regular.ttf") format("truetype"), url("./assets/fonts/effra-Font/Effra_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Good Dog New";
+  src: url("./assets/fonts/good-dog-font/good_dog.ttf") format("truetype"), url("./assets/fonts/good-dog-font/good_dog.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 1vw;
+}
+@media (max-width: 992px) {
+  html {
+    font-size: 1.4112903226vw;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 1.8229166667vw;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 2.3333333333vw;
+  }
+}
+@media (max-width: 480) {
+  html {
+    font-size: 3.3333333333vw;
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 3.7333333333vw;
+  }
+}
+
+body {
+  font-family: "Effra", sans-serif;
+  font-size: max(16px, 1rem);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.nav-header {
+  position: sticky;
+  padding: 1.875rem 5rem;
+  background: #000000;
+}
+.nav-header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-header .navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.nav-header .navbar .logo img {
+  height: 40px;
+}
+.nav-header .navbar .logo h4 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.nav-header .navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav-header .navbar ul li div {
+  overflow: hidden;
+}
+.nav-header .navbar ul li div a {
+  color: #ffffff;
+  font-size: 1.125rem;
+}
+.nav-header .navbar .btns {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav-header .navbar .btns button {
+  font-size: 1.125rem;
+}
+.nav-header .navbar .btns button:first-child {
+  color: #ffffff;
+}
+.nav-header .navbar .btns button:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 40px;
+  padding: 0 2rem;
+  height: 2.625rem;
+}/*# sourceMappingURL=styles.css.map */
