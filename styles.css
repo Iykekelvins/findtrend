@@ -595,6 +595,36 @@ button {
   transform: translateY(0);
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem 5rem;
+}
+.footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+}
+.footer .logo img {
+  height: 40px;
+}
+.footer .logo h4 {
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.footer ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.footer ul li {
+  overflow: hidden;
+  font-size: 1.125rem;
+}
+
 @keyframes backgroundScroll {
   0% {
     background-position: 0 0;
