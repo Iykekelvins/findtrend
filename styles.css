@@ -140,10 +140,25 @@ button {
   border-radius: 40px;
   padding: 0 2rem;
   height: 2.625rem;
+  position: relative;
+  overflow: hidden;
 }
-.nav-header .navbar .btns button:last-child:hover {
+.nav-header .navbar .btns button:last-child span {
+  position: relative;
+  z-index: 2;
+}
+.nav-header .navbar .btns button:last-child div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #a8ff35;
-  border-radius: 10px;
+  transition: all 0.3s linear;
+  transform: translateY(100%);
+}
+.nav-header .navbar .btns button:last-child:hover div {
+  transform: translateY(0);
 }
 
 .hero {
@@ -301,6 +316,283 @@ button {
 }
 .new-tabs-center-box img:not(:first-child) {
   height: 5.15rem;
+}
+
+.increase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.75rem 0;
+}
+.increase p {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.75rem;
+  max-width: 72rem;
+}
+.increase p span {
+  color: #adadad;
+}
+
+.startups {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 8.75rem 0;
+}
+.startups h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.75rem;
+}
+.startups-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.platforms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 8.75rem 0;
+  background: #fafafa;
+  margin-bottom: 4rem;
+}
+.platforms h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.75rem;
+}
+.platforms-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.platforms-icons span {
+  height: 7.75rem;
+  width: 7.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.platforms-icons span img {
+  position: relative;
+  z-index: 2;
+}
+.platforms-icons span:hover div {
+  transform: translateY(0);
+}
+.platforms-icons div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #a8ff35;
+  transition: all 0.3s linear;
+  transform: translateY(100%);
+}
+
+.tweets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 8.75rem;
+}
+.tweets-shots {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.tweets button {
+  position: relative;
+  background: #000000;
+  color: #ffffff;
+  margin-top: 5rem;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+.tweets button div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.3s linear;
+  transform: translateY(100%);
+}
+.tweets button span {
+  position: relative;
+  z-index: 2;
+}
+.tweets button:hover {
+  color: #000000;
+  border-color: #000000;
+  background: transparent;
+}
+.tweets button:hover div {
+  transform: translateY(0);
+}
+
+.deals {
+  background: #000000;
+  padding: 8.75rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.deals h2 {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.75rem;
+}
+.deals-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.deals-card {
+  height: 40rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+.deals-card-top {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.deals-card-top h3 {
+  font-size: 2.25rem;
+}
+.deals-card-top p {
+  font-size: 1.125rem;
+  padding-top: 0.25rem;
+}
+.deals-card-cost {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.deals-card-cost h2 {
+  color: #000000;
+}
+.deals-card-cost h4 {
+  font-size: 1.125rem;
+}
+.deals-card ul {
+  margin-top: 1rem;
+}
+.deals-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 1.688rem;
+}
+.deals-card.regular {
+  background: #a8ff35;
+}
+.deals-card.regular button {
+  color: #ffffff;
+  background: #000000;
+}
+.deals-card.regular button div {
+  background: #ffffff;
+}
+.deals-card.regular button:hover {
+  color: #000000;
+  border-color: #000000;
+}
+.deals-card.regular button:hover div {
+  transform: translateY(0);
+}
+.deals-card button {
+  position: absolute;
+  background: #a8ff35;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  overflow: hidden;
+}
+.deals-card button div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #8cc83a;
+  transition: all 0.3s linear;
+  transform: translateY(100%);
+}
+.deals-card button span {
+  position: relative;
+  z-index: 2;
+}
+.deals-card button:hover div {
+  transform: translateY(0);
+}
+
+.join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-direction: column;
+  background: #a8ff35;
+  padding: 8.75rem 0;
+}
+.join h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  max-width: 46.25rem;
+  line-height: 5.04rem;
+  text-align: center;
+}
+.join h1 span {
+  color: #87d322;
+}
+.join button {
+  position: relative;
+  background: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+.join button div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.3s linear;
+  transform: translateY(100%);
+}
+.join button span {
+  position: relative;
+  z-index: 2;
+}
+.join button:hover {
+  color: #000000;
+  border-color: #000000;
+  background: transparent;
+}
+.join button:hover div {
+  transform: translateY(0);
 }
 
 @keyframes backgroundScroll {

@@ -1,9 +1,9 @@
 const startups = document.querySelector(".startups-list");
-const icons = document.querySelector(".sect-four-icons");
+const icons = document.querySelector(".platforms-icons");
 
-const cardOne = document.querySelector(".card-one-deals");
-const cardTwo = document.querySelector(".card-two-deals");
-const cardThree = document.querySelector(".card-three-deals");
+const cardOne = document.querySelector(".personal ul");
+const cardTwo = document.querySelector(".regular ul");
+const cardThree = document.querySelector(".premium ul");
 
 const images = [
   "/assets/images/1.png",
@@ -25,14 +25,14 @@ const images = [
 ];
 
 const socials = [
-  "/assets/images/icon_1.png",
-  "/assets/images/icon_2.png",
-  "/assets/images/icon_3.png",
-  "/assets/images/icon_4.png",
-  "/assets/images/icon_5.png",
-  "/assets/images/icon_6.png",
-  "/assets/images/icon_7.png",
-  "/assets/images/icon_8.png",
+  "/assets/images/icon_1.svg",
+  "/assets/images/icon_2.svg",
+  "/assets/images/icon_3.svg",
+  "/assets/images/icon_4.svg",
+  "/assets/images/icon_5.svg",
+  "/assets/images/icon_6.svg",
+  "/assets/images/icon_7.svg",
+  "/assets/images/icon_8.svg",
 ];
 
 const dealsOne = [
@@ -72,12 +72,13 @@ socials.forEach((icon) => {
   const image = document.createElement("img");
   image.src = icon;
 
-  const span = document.createElement("span");
-  span.classList.add("text-wrapper");
+  const iconContainer = document.createElement("span");
+  const bg = document.createElement("div");
 
-  span.appendChild(image);
+  iconContainer.appendChild(image);
+  iconContainer.appendChild(bg);
 
-  icons.appendChild(span);
+  icons.appendChild(iconContainer);
 });
 
 dealsOne.forEach((deal) => {
