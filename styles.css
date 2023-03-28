@@ -110,7 +110,7 @@ button {
   gap: 2.5rem;
   margin-left: 8rem;
 }
-.nav-header .navbar ul li div {
+.nav-header .navbar ul li {
   overflow: hidden;
 }
 .nav-header .navbar ul li div a {
@@ -123,7 +123,7 @@ button {
 .nav-header .navbar .btns {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  overflow: hidden;
 }
 .nav-header .navbar .btns button {
   font-size: 1.125rem;
@@ -168,13 +168,6 @@ button {
   background-size: cover;
   animation: backgroundScroll 7s linear infinite forwards;
 }
-.hero .lines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
 .hero-content {
   display: flex;
   align-items: center;
@@ -193,7 +186,7 @@ button {
 .hero-content p {
   color: #8b8b8b;
   font-size: 1.125rem;
-  max-width: calc(43.75rem - 200px);
+  max-width: 34.75rem;
   line-height: 1.688rem;
   margin-top: 0.5rem;
 }
@@ -230,11 +223,12 @@ button {
 
 .new-tabs {
   background: #a8ff35;
-  padding: 8.75rem 0;
+  padding: 8.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 .new-tabs h1 {
   font-size: 4.5rem;
@@ -261,6 +255,12 @@ button {
   flex-direction: column;
   gap: 0.5rem;
 }
+.new-tabs-center-info .char {
+  transform: translateY(100%);
+}
+.new-tabs-center-info img {
+  transform: scale(0);
+}
 .new-tabs-center-info span {
   font-family: "Good Dog New", sans-serif;
   font-size: 0.875rem;
@@ -272,6 +272,9 @@ button {
 .new-tabs-center .right {
   flex-direction: column-reverse;
   align-items: baseline;
+}
+.new-tabs-center .right .char {
+  transform: translateY(-100%);
 }
 .new-tabs-center-box {
   background: #f5f5f5;
@@ -322,7 +325,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8.75rem 0;
+  padding: 8.75rem 2rem;
 }
 .increase p {
   font-size: 4rem;
@@ -340,7 +343,8 @@ button {
   justify-content: center;
   flex-direction: column;
   gap: 2.5rem;
-  padding: 8.75rem 0;
+  padding: 8.75rem 2rem;
+  text-align: center;
 }
 .startups h2 {
   font-size: 4rem;
@@ -351,6 +355,27 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  width: 70%;
+}
+.startups-list img {
+  transform: translateY(100%);
+  opacity: 0;
+  width: 100%;
+}
+@media (max-width: 998px) {
+  .startups-list {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .startups-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .startups-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .platforms {
@@ -358,10 +383,11 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2.5rem;
-  padding: 8.75rem 0;
+  gap: 1.5rem;
+  padding: 8.75rem 2rem;
   background: #fafafa;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
 }
 .platforms h2 {
   font-size: 4rem;
@@ -372,6 +398,8 @@ button {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .platforms-icons span {
   height: 7.75rem;
@@ -386,6 +414,9 @@ button {
 .platforms-icons span img {
   position: relative;
   z-index: 2;
+  transform: translateY(100%);
+  opacity: 0;
+  width: 70%;
 }
 .platforms-icons span:hover div {
   transform: translateY(0);
@@ -406,12 +437,18 @@ button {
   align-items: center;
   flex-direction: column;
   padding-bottom: 8.75rem;
+  background: #fafafa;
 }
 .tweets-shots {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 2.5rem;
+}
+.tweets-shots img {
+  transform: translateY(100px);
+  opacity: 0;
+  width: 90%;
 }
 .tweets button {
   position: relative;
@@ -420,6 +457,7 @@ button {
   margin-top: 5rem;
   overflow: hidden;
   border: 1px solid #000000;
+  transform: translateY(100%);
 }
 .tweets button div {
   position: absolute;
@@ -446,7 +484,7 @@ button {
 
 .deals {
   background: #000000;
-  padding: 8.75rem 0;
+  padding: 8.75rem 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -463,12 +501,23 @@ button {
   gap: 2.5rem;
   margin-top: 2.5rem;
 }
+@media (max-width: 768px) {
+  .deals-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .deals-cards {
+    grid-template-columns: 1fr;
+  }
+}
 .deals-card {
-  height: 40rem;
+  height: 39rem;
   background: #ffffff;
   padding: 2rem;
   border-radius: 10px;
   position: relative;
+  overflow: hidden;
 }
 .deals-card-top {
   padding-bottom: 2rem;
@@ -486,22 +535,34 @@ button {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+  overflow: hidden;
 }
 .deals-card-cost h2 {
   color: #000000;
+  transform: translateY(100%);
+  opacity: 0;
 }
 .deals-card-cost h4 {
   font-size: 1.125rem;
+  transform: translateY(200%);
+  opacity: 0;
 }
 .deals-card ul {
   margin-top: 1rem;
 }
 .deals-card ul li {
+  font-size: 1.125rem;
+  margin-bottom: 1.688rem;
+  overflow: hidden;
+}
+.deals-card ul li span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.125rem;
-  margin-bottom: 1.688rem;
+}
+.deals-card ul li span {
+  transform: translateY(100%);
+  opacity: 0;
 }
 .deals-card.regular {
   background: #a8ff35;
@@ -545,6 +606,9 @@ button {
 .deals-card button:hover div {
   transform: translateY(0);
 }
+.deals-card .char {
+  transform: translateY(100%);
+}
 
 .join {
   display: flex;
@@ -553,7 +617,7 @@ button {
   gap: 2.5rem;
   flex-direction: column;
   background: #a8ff35;
-  padding: 8.75rem 0;
+  padding: 8.75rem 2rem;
 }
 .join h1 {
   font-size: 4.5rem;
@@ -623,8 +687,42 @@ button {
 .footer ul li {
   overflow: hidden;
   font-size: 1.125rem;
+  transition: all 0.3s linear;
+}
+.footer ul li:hover a {
+  color: #a8ff35;
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 5rem 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .footer ul {
+    flex-direction: column;
+  }
 }
 
+.wrapper,
+.word {
+  overflow: hidden;
+}
+
+.reveal {
+  animation: slide-in 0.6s cubic-bezier(0.5, 0, 0.5, 1) both;
+  animation-delay: calc(3ms * var(--char-index) + 1000ms);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
 @keyframes backgroundScroll {
   0% {
     background-position: 0 0;

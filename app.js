@@ -62,7 +62,7 @@ images.forEach((img) => {
   image.src = img;
 
   const span = document.createElement("span");
-  span.classList.add("text-wrapper");
+  span.classList.add("wrapper");
 
   span.appendChild(image);
   startups.appendChild(span);
@@ -83,30 +83,285 @@ socials.forEach((icon) => {
 
 dealsOne.forEach((deal) => {
   const item = document.createElement("li");
-  item.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  const span = document.createElement("span");
+
+  span.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6946 0.931356C14.1467 1.45305 14.0904 2.2425 13.5687 2.69463L6.06866 9.19463C5.57308 9.62413 4.82984 9.59762 4.36612 9.1339L0.366117 5.1339C-0.122039 4.64575 -0.122039 3.85429 0.366117 3.36614C0.854272 2.87798 1.64573 2.87798 2.13388 3.36614L5.31088 6.54314L11.9313 0.805408C12.453 0.353273 13.2425 0.409662 13.6946 0.931356Z" fill="black"/>
   </svg>
-  ${deal}`;
+  <p>${deal}</p>`;
 
+  item.appendChild(span);
   cardOne.appendChild(item);
 });
 
 dealsTwo.forEach((deal) => {
   const item = document.createElement("li");
-  item.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill=none" xmlns="http://www.w3.org/2000/svg">
+  const span = document.createElement("span");
+
+  span.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6946 0.931356C14.1467 1.45305 14.0904 2.2425 13.5687 2.69463L6.06866 9.19463C5.57308 9.62413 4.82984 9.59762 4.36612 9.1339L0.366117 5.1339C-0.122039 4.64575 -0.122039 3.85429 0.366117 3.36614C0.854272 2.87798 1.64573 2.87798 2.13388 3.36614L5.31088 6.54314L11.9313 0.805408C12.453 0.353273 13.2425 0.409662 13.6946 0.931356Z" fill="black"/>
   </svg>
-  ${deal}`;
+  <p>${deal}</p>`;
 
+  item.appendChild(span);
   cardTwo.appendChild(item);
 });
 
 dealsThree.forEach((deal) => {
   const item = document.createElement("li");
-  item.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill=none" xmlns="http://www.w3.org/2000/svg">
+  const span = document.createElement("span");
+
+  span.innerHTML = `<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6946 0.931356C14.1467 1.45305 14.0904 2.2425 13.5687 2.69463L6.06866 9.19463C5.57308 9.62413 4.82984 9.59762 4.36612 9.1339L0.366117 5.1339C-0.122039 4.64575 -0.122039 3.85429 0.366117 3.36614C0.854272 2.87798 1.64573 2.87798 2.13388 3.36614L5.31088 6.54314L11.9313 0.805408C12.453 0.353273 13.2425 0.409662 13.6946 0.931356Z" fill="black"/>
   </svg>
-  ${deal}`;
+  <p>${deal}</p>`;
 
+  item.appendChild(span);
   cardThree.appendChild(item);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+Splitting();
+
+const heroTl = gsap.timeline({
+  default: { ease: "Expo.inOut" },
+});
+
+heroTl.fromTo(
+  [".logo img, .logo h4"],
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+  }
+);
+
+heroTl.fromTo(
+  ".navbar li div",
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+  },
+  "-=0.5"
+);
+
+heroTl.fromTo(
+  ".navbar .btns button",
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.15,
+    duration: 0.05,
+  },
+  "-=0.5"
+);
+
+// ScrollTrigger.create({
+//   trigger: ".hero",
+//   start: "bottom +=400px",
+//   end: "bottom top+=200",
+//   // once: true,
+//   markers: true,
+//   // pin: true,
+//   scrub: true,
+//   onEnter: () => {
+//     gsap.to(".hero", {
+//       y: 100,
+//       ease: "none",
+//     });
+//   },
+// });
+
+ScrollTrigger.create({
+  trigger: ".new-tabs-center",
+  start: "top bottom-=180px",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".disposed-img", {
+      top: 0,
+      left: 0,
+      right: 0,
+      opacity: 0,
+      stagger: 0.2,
+      height: "6.15rem",
+      width: "400px",
+      transform: "translate(22%, 57%) rotate(0deg)",
+      ease: "Expo.inOut",
+    });
+
+    gsap.to(
+      ".new-tabs-center span",
+      {
+        y: 0,
+        opacity: 1,
+        ease: "Expo.inOut",
+        // duration: 0.5,
+      },
+      "-=0.25"
+    );
+
+    gsap.to(
+      ".new-tabs-center img",
+      {
+        transform: "scale(1)",
+        ease: "Expo.inOut",
+        // duration: 0.5,
+      },
+      "-=0.5"
+    );
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".startups-list",
+  start: "top bottom-=250px",
+  once: true,
+  // markers: true,
+  // end: "bottom center",
+  onEnter: () => {
+    gsap.to(".startups-list img", {
+      y: 0,
+      stagger: 0.05,
+      opacity: 1,
+      ease: "Expo.inOut",
+    });
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".platforms-icons",
+  start: "top bottom-=200px",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".platforms-icons img", {
+      y: 0,
+      stagger: 0.05,
+      opacity: 1,
+      ease: "Expo.inOut",
+    });
+  },
+});
+
+const tweets = document.querySelectorAll(".tweets-shots img");
+
+tweets.forEach((tweet) => {
+  ScrollTrigger.create({
+    trigger: tweet,
+    start: "top bottom-=70px",
+    once: true,
+    // markers: true,
+    onEnter: () => {
+      gsap.to(tweet, {
+        y: 0,
+        opacity: 1,
+        ease: "Expo.inOut",
+      });
+    },
+  });
+});
+
+ScrollTrigger.create({
+  trigger: ".tweets button",
+  start: "top bottom-=100px",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".tweets button", {
+      y: 0,
+      opacity: 1,
+      ease: "Expo.inOut",
+      duration: 0.05,
+    });
+  },
+});
+
+const cards = document.querySelectorAll(".deals-card");
+
+cards.forEach((card) => {
+  const h3 = card.querySelector("h3");
+  const chars = card.querySelectorAll(".char");
+  ScrollTrigger.create({
+    trigger: h3,
+    start: "top bottom-=70px",
+    once: true,
+    // markers: true,
+    onEnter: () => {
+      gsap.to(chars, {
+        y: 0,
+        stagger: 0.05,
+        ease: "Expo.inOut",
+      });
+    },
+  });
+});
+
+// cards.forEach((card) => {
+//   const p = card.querySelector("p");
+//   const chars = card.querySelectorAll("p .char");
+//   ScrollTrigger.create({
+//     trigger: p,
+//     start: "top bottom-=70px",
+//     once: true,
+//     // markers: true,
+//     onEnter: () => {
+//       gsap.to(chars, {
+//         y: 0,
+//         stagger: 0.05,
+//         ease: "Expo.inOut",
+//       });
+//     },
+//   });
+// });
+
+cards.forEach((card) => {
+  const h2 = card.querySelector("h2");
+  const h4 = card.querySelectorAll("h4");
+  ScrollTrigger.create({
+    trigger: h2,
+    start: "top bottom-=200px",
+    once: true,
+    // markers: true,
+    onEnter: () => {
+      gsap.to([h2, h4], {
+        y: 0,
+        stagger: 0.05,
+        opacity: 1,
+        ease: "Expo.inOut",
+      });
+    },
+  });
+});
+
+cards.forEach((card) => {
+  const ul = card.querySelector("ul");
+  const deal = card.querySelectorAll("ul li span");
+  ScrollTrigger.create({
+    trigger: ul,
+    start: "top bottom-=200px",
+    once: true,
+    // markers: true,
+    onEnter: () => {
+      gsap.to(deal, {
+        y: 0,
+        stagger: 0.05,
+        opacity: 1,
+        ease: "Expo.inOut",
+      });
+    },
+  });
 });
